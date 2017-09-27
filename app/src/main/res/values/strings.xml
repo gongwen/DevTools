@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">DevTools</string>
+    <string-array name="mainItemList">
+        <item>设备信息</item>
+    </string-array>
+    <string name="device_screen">屏幕</string>
+    <string name="device_system">系统</string>
+    <string name="device_hardware">硬件</string>
+    <string name="device_cpu">CPU</string>
+    <string name="device_storage">存储</string>
+    <string name="device_id">本机ID</string>
+    <string name="device_network">网络相关</string>
+    <string name="device_vm">VM 虚拟机</string>
+    <string name="device_build">Build</string>
+    <string name="device_build_version">Build.VERSION</string>
+    <string name="device_system_properties">System.Properties</string>
+    <string name="device_system_env">System.env</string>
+
+    <integer-array name="deviceItemList" translate="false">
+        <item id='0'>@string/device_screen</item>
+        <item id='1'>@string/device_system</item>
+        <item id='2'>@string/device_hardware</item>
+        <item id='3'>@string/device_cpu</item>
+        <item id='4'>@string/device_storage</item>
+        <item id='5'>@string/device_id</item>
+        <item id='6'>@string/device_network</item>
+        <item id='7'>@string/device_vm</item>
+        <item id='8'>@string/device_build</item>
+        <item id='9'>@string/device_build_version</item>
+        <item id='10'>@string/device_system_properties</item>
+        <item id='11'>@string/device_system_env</item>
+    </integer-array>
+</resources>
