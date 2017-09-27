@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">@color/colorTheme</color>
+    <color name="colorPrimaryDark">@color/colorTheme</color>
+    <color name="colorAccent">@color/colorTheme</color>
+
+    <color name="colorTheme">#5CAB7D</color>
+    <color name="colorPrimaryText">#333333</color>
+
+    <color name="colorBgGray">#eeeeee</color>
+
+    <color name="colorToolbarText">#ffffff</color>
+    <color name="colorGray3">#333333</color>
+    <color name="colorGray6">#666666</color>
+
+    <color name="white">@android:color/white</color>
+
+</resources>
