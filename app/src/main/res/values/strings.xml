@@ -2,6 +2,7 @@
     <string name="app_name">DevTools</string>
     <string-array name="mainItemList">
         <item>设备信息</item>
+        <item>Activity Stack</item>
     </string-array>
     <string name="device_screen">屏幕</string>
     <string name="device_system">系统</string>

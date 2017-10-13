@@ -33,4 +33,15 @@ http://blog.csdn.net/yanzhenjie1003/article/details/76719487
 http://www.jianshu.com/p/c8a30200e6b2?utm_campaign=haruki&utm_content=note&utm_medium=reader_share&utm_source=qq
 菊花效果
 http://blog.csdn.net/ershiyikezhong/article/details/45336059
+悬浮窗
+Android权限管理原理
+http://www.jianshu.com/p/9938d367b6db
+Android 开发者必知必会的权限管理知识
+http://www.10tiao.com/html/330/201708/2653579229/1.html
+Android如何获取判断是否有悬浮窗权限
+http://blog.csdn.net/mzm489321926/article/details/50542065
+Android 悬浮窗权限各机型各系统适配大全
+http://blog.csdn.net/self_study/article/details/52859790
+
+
 

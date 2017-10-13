@@ -33,6 +33,8 @@ dependencies {
     })
 
     implementation project(':util')
+    implementation project(':activitytracker')
+
     implementation 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
     //All com.android.support libraries must use the exact same version specification
@@ -44,6 +46,5 @@ dependencies {
     implementation "com.android.support:recyclerview-v7:$supportLibraryVersion"
     implementation "com.android.support:cardview-v7:$supportLibraryVersion"
     annotationProcessor 'com.zhy:mpermission-compiler:1.0.0'
-    compile 'com.zhy:mpermission-api:1.0.0'
-
+    implementation 'com.zhy:mpermission-api:1.0.0'
 }

@@ -1,12 +1,17 @@
 package com.gw.tools.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.GridLayoutManager;
 import android.view.View;
 
 import com.gw.tools.R;
+import com.gw.tools.activitytracker.CommandPool;
+import com.gw.tools.activitytracker.TrackerService;
 import com.gw.tools.lib.adapter.RecyclerViewAdapter;
+import com.gw.tools.lib.util.SettingCompat;
+import com.gw.tools.lib.util.ToastUtil;
 import com.gw.tools.lib.util.ViewHolder;
 
 import java.util.Arrays;
@@ -45,6 +50,19 @@ public class MainFragment extends BaseRecyclerViewFragment implements RecyclerVi
         switch (position) {
             case 0:
                 mActivity.addFragment(new DeviceInfoFragment());
+                break;
+            case 1:
+                if (!SettingCompat.canDrawOverlays(mActivity)) {
+                    ToastUtil.shortToast(mActivity, "请先授予 \"DevTools\" 悬浮窗权限");
+                    SettingCompat.openAppDetailsSettings(mActivity);
+                } else {
+                    if(SettingCompat.checkAccessibility(mActivity)){
+                        mActivity.startService(
+                                new Intent(mActivity, TrackerService.class)
+                                        .putExtra(CommandPool.EXTRA_COMMAND, CommandPool.COMMAND_OPEN_ACTIVITY_TRACKER_WINDOW)
+                        );
+                    }
+                }
                 break;
         }
     }
