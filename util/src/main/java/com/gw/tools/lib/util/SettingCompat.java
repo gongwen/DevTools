@@ -49,7 +49,7 @@ public class SettingCompat {
         return true;
     }
 
-    //辅助功能相关#######################################################
+    //辅助功能相关########################################################
 
     public static boolean checkAccessibility(Context context) {
         // 判断辅助功能是否开启
