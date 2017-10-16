@@ -2,6 +2,7 @@
     package="com.gw.tools.activitytracker">
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <application>
+        <activity android:name=".ViewHierarchicalActivity"></activity>
         <service
             android:name=".TrackerService"
             android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">

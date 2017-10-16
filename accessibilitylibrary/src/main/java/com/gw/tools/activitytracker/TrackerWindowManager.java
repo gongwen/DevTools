@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.WindowManager;
 
 import com.gw.tools.lib.util.ToastUtil;
+import com.gw.tools.util.CommonPool;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -15,7 +16,7 @@ import java.util.Map;
  * Created by GongWen on 17/10/12.
  */
 
-class TrackerWindowManager {
+public class TrackerWindowManager {
     private final Context mContext;
     private final WindowManager mWindowManager;
     private final Map<Class, View> hasAddedView = new HashMap<>();
@@ -26,7 +27,7 @@ class TrackerWindowManager {
     }
 
     public void handleCommand(String command) {
-        if (CommandPool.COMMAND_OPEN_ACTIVITY_TRACKER_WINDOW.equals(command)) {
+        if (CommonPool.COMMAND_OPEN_ACTIVITY_TRACKER_WINDOW.equals(command)) {
             if (hasAddedView.get(ActivityTrackerView.class) != null) {
                 ToastUtil.shortToast(mContext, "Activity Tracker 已开启");
                 return;
@@ -35,7 +36,7 @@ class TrackerWindowManager {
             hasAddedView.put(ActivityTrackerView.class, mFloatingView);
             WindowManager.LayoutParams LAYOUT_PARAMS = getDefaultWMLayoutParams();
             mWindowManager.addView(mFloatingView, LAYOUT_PARAMS);
-        } else if (CommandPool.COMMAND_CLOSE_ACTIVITY_TRACKER_WINDOW.equals(command)) {
+        } else if (CommonPool.COMMAND_CLOSE_ACTIVITY_TRACKER_WINDOW.equals(command)) {
             if (hasAddedView.get(ActivityTrackerView.class) != null) {
                 mWindowManager.removeView(hasAddedView.get(ActivityTrackerView.class));
                 hasAddedView.remove(ActivityTrackerView.class);
@@ -51,7 +52,7 @@ class TrackerWindowManager {
         params.width = WindowManager.LayoutParams.WRAP_CONTENT;
         params.height = WindowManager.LayoutParams.WRAP_CONTENT;
         params.gravity = Gravity.LEFT | Gravity.TOP;
-        // TODO: 17/10/12 已废弃 
+        // TODO: 17/10/12 已废弃
         params.type = WindowManager.LayoutParams.TYPE_PHONE;
         params.format = PixelFormat.RGBA_8888;
         params.flags = WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL

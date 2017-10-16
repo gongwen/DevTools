@@ -1,0 +1,24 @@
+package com.gw.tools.lib.adapter;
+
+import android.text.Editable;
+import android.text.TextWatcher;
+
+/**
+ * Created by GongWen on 17/10/19.
+ */
+
+public class TextWatcherAdapter implements TextWatcher {
+    @Override
+    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+    }
+
+    @Override
+    public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+    }
+
+    @Override
+    public void afterTextChanged(Editable s) {
+
+    }
+}

@@ -89,4 +89,35 @@ public class FileUtil {
             return new long[]{-1, -1};
         }
     }
+
+    public static String getMIMEType(File file) {
+        String end = file.getName().substring(file.getName().lastIndexOf(".") + 1,
+                file.getName().length()).toLowerCase();
+        String type;
+        if (end.equalsIgnoreCase("mp3")
+                || end.equalsIgnoreCase("aac")
+                || end.equalsIgnoreCase("amr")
+                || end.equalsIgnoreCase("mpeg")
+                || end.equalsIgnoreCase("mp4")) {
+            type = "audio";
+        } else if (end.equalsIgnoreCase("mp4")
+                || end.equalsIgnoreCase("3gp")
+                || end.equalsIgnoreCase("mpeg4")
+                || end.equalsIgnoreCase("3gpp")
+                || end.equalsIgnoreCase("3gpp2")
+                || end.equalsIgnoreCase("flv")
+                || end.equalsIgnoreCase("avi")) {
+            type = "video";
+        } else if (end.equalsIgnoreCase("jpg")
+                || end.equalsIgnoreCase("gif")
+                || end.equalsIgnoreCase("bmp")
+                || end.equalsIgnoreCase("png")
+                || end.equalsIgnoreCase("jpeg")) {
+            type = "image";
+        } else {
+            type = "*";
+        }
+        type += "/*";
+        return type;
+    }
 }

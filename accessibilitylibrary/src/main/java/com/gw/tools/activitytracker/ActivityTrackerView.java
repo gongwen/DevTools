@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.graphics.Point;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
@@ -14,6 +13,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.gw.tools.lib.util.SysUtil;
+import com.gw.tools.moudle.ActivityChangedEvent;
+import com.gw.tools.util.CommonPool;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -22,7 +23,7 @@ import org.greenrobot.eventbus.Subscribe;
  * Created by GongWen on 17/10/12.
  */
 class ActivityTrackerView extends LinearLayout implements View.OnClickListener {
-    public static final String TAG = "ActivityTrackerView";
+    public static final String TAG = ActivityTrackerView.class.getSimpleName();
 
     private final Context mContext;
     private final WindowManager mWindowManager;
@@ -57,7 +58,6 @@ class ActivityTrackerView extends LinearLayout implements View.OnClickListener {
 
     @Subscribe
     public void onHandleEvent(ActivityChangedEvent event) {
-        Log.d(TAG, "event:" + event.toString());
         String packageName = event.getPackageName();
         String className = event.getClassName();
         if (className.startsWith(packageName)) {
@@ -114,7 +114,7 @@ class ActivityTrackerView extends LinearLayout implements View.OnClickListener {
         if (R.id.iv_close == id) {
             mContext.startService(
                     new Intent(mContext, TrackerService.class)
-                            .putExtra(CommandPool.EXTRA_COMMAND, CommandPool.COMMAND_CLOSE_ACTIVITY_TRACKER_WINDOW)
+                            .putExtra(CommonPool.EXTRA_COMMAND, CommonPool.COMMAND_CLOSE_ACTIVITY_TRACKER_WINDOW)
             );
         }
     }
