@@ -100,6 +100,7 @@ public class MainFragment extends BaseRecyclerViewFragment implements RecyclerVi
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == REQUEST_CODE_ACCESSIBILITY) {
             if (SettingCompat.isAccessibilitySettingsOn(mActivity)) {
+                startAccessibilityService();
                 showActivityTrackerWindow();
             }
         } else if (requestCode == REQUEST_CODE_OVERLAY_PERMISSION) {
